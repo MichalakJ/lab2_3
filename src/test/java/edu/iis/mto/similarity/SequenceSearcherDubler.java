@@ -13,8 +13,9 @@ import edu.iis.mto.search.SequenceSearcher;
  * @author student
  */
 public class SequenceSearcherDubler implements SequenceSearcher{
-    private int searchCalled = 0;
+    private static int searchCalled = 0;
     public SearchResult search(int i, int[] ints) {
+        searchCalled++;
         SearchResultDubler result = new SearchResultDubler();
         
         for(int j=0; j<ints.length; j++){
@@ -25,11 +26,12 @@ public class SequenceSearcherDubler implements SequenceSearcher{
         }
         return result;
     }
-    public void callSearch(){
-        searchCalled++;
-    }
+
     public int getSearchCalled(){
         return searchCalled;
+    }
+    public void resetCounter(){
+        searchCalled = 0;
     }
     
 }
