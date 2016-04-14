@@ -28,4 +28,12 @@ public class SimiliarityFinderTest {
         double result = finder.calculateJackardSimilarity(seq1, seq2);
         assertThat(result,equalTo(1.0));
     }
+    @Test
+    public void givenNonEmptySequences_whenCalculateJackardSimilarity_thenResultisCorrect(){
+        int seq1[] = {1,2,3};
+        int seq2[] = {3,4,5};
+        double result = finder.calculateJackardSimilarity(seq1, seq2);
+        System.out.println(result);
+        assertThat(result,equalTo(1.0/5.0));
+    }
 }
