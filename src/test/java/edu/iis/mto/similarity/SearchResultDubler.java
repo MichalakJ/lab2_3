@@ -15,7 +15,7 @@ public class SearchResultDubler implements SearchResult{
 
     private boolean found = false;
     private int position = -1;
-    private int searchCalled = 0;
+
     public boolean isFound() {
         return found;
     }
@@ -29,11 +29,6 @@ public class SearchResultDubler implements SearchResult{
     public void setPostion(int position){
         this.position=position;
     }
-    public void callSearch(){
-        searchCalled++;
-    }
-    public int getSearchCalled(){
-        return searchCalled;
-    }
+
     
 }
